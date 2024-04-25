@@ -1,0 +1,90 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="resource\answerA_dobr.png" />
+    <None Remove="resource\answerA_norm.png" />
+    <None Remove="resource\answerA_ozn.png" />
+    <None Remove="resource\answerA_spat.png" />
+    <None Remove="resource\answerB_dobr.png" />
+    <None Remove="resource\answerB_norm.png" />
+    <None Remove="resource\answerB_ozn.png" />
+    <None Remove="resource\answerB_spat.png" />
+    <None Remove="resource\answerC_dobr.png" />
+    <None Remove="resource\answerC_norm.png" />
+    <None Remove="resource\answerC_ozn.png" />
+    <None Remove="resource\answerC_spat.png" />
+    <None Remove="resource\answerD_dobr.png" />
+    <None Remove="resource\answerD_norm.png" />
+    <None Remove="resource\answerD_ozn.png" />
+    <None Remove="resource\answerD_spat.png" />
+    <None Remove="resource\hint5050_norm.png" />
+    <None Remove="resource\hint5050_ozn.png" />
+    <None Remove="resource\hint5050_pouz.png" />
+    <None Remove="resource\hintPeople_norm.png" />
+    <None Remove="resource\hintPeople_ozn.png" />
+    <None Remove="resource\hintPeople_pouz.png" />
+    <None Remove="resource\hintPhone_norm.png" />
+    <None Remove="resource\hintPhone_ozn.png" />
+    <None Remove="resource\hintPhone_pouz.png" />
+    <None Remove="resource\odpocet.png" />
+    <None Remove="resource\tl_a_norm.png" />
+    <None Remove="resource\tl_a_ozn.png" />
+    <None Remove="resource\tl_a_spat.png" />
+    <None Remove="resource\tl_b_dobr.png" />
+    <None Remove="resource\tl_b_norm.png" />
+    <None Remove="resource\tl_b_ozn.png" />
+    <None Remove="resource\tl_b_spat.png" />
+    <None Remove="resource\tl_c_dobr.png" />
+    <None Remove="resource\tl_c_norm.png" />
+    <None Remove="resource\tl_c_ozn.png" />
+    <None Remove="resource\tl_c_spat.png" />
+    <None Remove="resource\tl_d_dobr.png" />
+    <None Remove="resource\tl_d_norm.png" />
+    <None Remove="resource\tl_d_ozn.png" />
+    <None Remove="resource\tl_d_spat.png" />
+    <None Remove="resource\zaklad_tl.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MySql.Data" Version="8.2.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="resource\answerA_norm.png" />
+    <Resource Include="resource\answerA_ozn.png" />
+    <Resource Include="resource\answerA_spat.png" />
+    <Resource Include="resource\answerB_dobr.png" />
+    <Resource Include="resource\answerB_norm.png" />
+    <Resource Include="resource\answerB_ozn.png" />
+    <Resource Include="resource\answerB_spat.png" />
+    <Resource Include="resource\answerC_dobr.png" />
+    <Resource Include="resource\answerC_norm.png" />
+    <Resource Include="resource\answerC_ozn.png" />
+    <Resource Include="resource\answerC_spat.png" />
+    <Resource Include="resource\answerD_dobr.png" />
+    <Resource Include="resource\answerD_norm.png" />
+    <Resource Include="resource\answerD_ozn.png" />
+    <Resource Include="resource\answerD_spat.png" />
+    <Resource Include="resource\hint5050_norm.png" />
+    <Resource Include="resource\hint5050_ozn.png" />
+    <Resource Include="resource\hint5050_pouz.png" />
+    <Resource Include="resource\hintPeople_norm.png" />
+    <Resource Include="resource\hintPeople_ozn.png" />
+    <Resource Include="resource\hintPeople_pouz.png" />
+    <Resource Include="resource\hintPhone_norm.png" />
+    <Resource Include="resource\hintPhone_ozn.png" />
+    <Resource Include="resource\hintPhone_pouz.png" />
+    <Resource Include="resource\answerA_dobr.png" />
+    <Resource Include="resource\odpocet.png" />
+    <Resource Include="resource\zaklad_tl.png" />
+  </ItemGroup>
+
+</Project>

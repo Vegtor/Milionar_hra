@@ -1,0 +1,170 @@
+﻿<Page x:Class="Milionář.Game"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Milionář"
+      mc:Ignorable="d" 
+      d:DesignHeight="750" d:DesignWidth="1000"
+      Title="Game">
+
+    <Grid x:Name="mainGrid" Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid x:Name="questionGrid" Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="4*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="5*"/>
+            </Grid.RowDefinitions>
+            <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0">
+                <Image x:Name="questionPicture" Source="/resource/zaklad_tl.png" Height="auto" VerticalAlignment="Top" Width="auto" Margin="0,57,0,0"/>
+                <TextBlock x:Name="questionTextBlock" Margin="0,80,0,0" FontSize="32" TextWrapping="Wrap" Text="Otázka" Foreground="White" TextAlignment="Center" HorizontalAlignment="Center" Width="678" Height="100" VerticalAlignment="Top"/>
+            </Grid>
+            <Grid Grid.Row="1" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="4*"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" MouseMove="Button_MouseMove" MouseLeave="Button_MouseLeave" Click="HintClicked">
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Image x:Name="hintPeople" Source="/resource/hintPeople_norm.png" Height="auto" VerticalAlignment="Top" Width="auto"/>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+                    <Image x:Name="hintPhone" Grid.Row="0" Grid.Column="1" Source="/resource/odpocet.png" Height="auto" VerticalAlignment="Top" Width="auto"/>
+
+                    <TextBlock x:Name="timerTextBlock" Grid.Row="0" Grid.Column="1" TextWrapping="Wrap" Text="60" FontSize="32" Width="auto" Height="66" TextAlignment="Center" VerticalAlignment="Top" Foreground="White" Margin="0,20,0,0"/>
+                    <Button Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" MouseMove="Button_MouseMove" MouseLeave="Button_MouseLeave" Click="HintClicked">
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Image x:Name="hint5050" Source="/resource/hint5050_norm.png" Height="auto" VerticalAlignment="Top" Width="auto"/>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </Grid>
+            </Grid>
+            <Grid x:Name="answersGrid"  Grid.Row="2"  HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="A" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" MouseMove="Button_MouseMove" MouseLeave="Button_MouseLeave" Click="AnswerClicked">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Image x:Name="answerA" Source="/resource/answerA_norm.png" Height="auto" VerticalAlignment="Top" Width="auto"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Grid Grid.Row="0" Grid.Column="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="9*"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="4*"/>
+                        <RowDefinition Height="2*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Column="1" Grid.Row="1"  HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <TextBlock x:Name="answerATextblock" TextWrapping="Wrap" Text="TextBlock" FontSize="20" Foreground="white" Width="auto" Height="auto"> Odpověď A</TextBlock>
+                    </Grid>
+                </Grid>
+                <Button x:Name="B" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" MouseMove="Button_MouseMove" MouseLeave="Button_MouseLeave" Click="AnswerClicked">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Image x:Name="answerB" Source="/resource/answerB_norm.png" Height="auto" VerticalAlignment="Top" Width="auto"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Grid Grid.Row="0" Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="9*"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="4*"/>
+                        <RowDefinition Height="2*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Column="1" Grid.Row="1"  HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <TextBlock x:Name="answerBTextblock" TextWrapping="Wrap" Text="TextBlock" FontSize="20" Foreground="white" Width="auto" Height="auto"> Odpověď B</TextBlock>
+                    </Grid>
+                </Grid>
+                <Button x:Name="C" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" MouseMove="Button_MouseMove" MouseLeave="Button_MouseLeave" Click="AnswerClicked">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Image x:Name="answerC" Source="/resource/answerC_norm.png" Height="auto" VerticalAlignment="Top" Width="auto"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Grid Grid.Row="2" Grid.Column="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="9*"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="4*"/>
+                        <RowDefinition Height="2*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Column="1" Grid.Row="1"  HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <TextBlock x:Name="answerCTextblock" TextWrapping="Wrap" Text="TextBlock" FontSize="20" Foreground="white" Width="auto" Height="auto"> Odpověď C</TextBlock>
+                    </Grid>
+                </Grid>
+                <Button x:Name="D" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" MouseMove="Button_MouseMove" MouseLeave="Button_MouseLeave" Click="AnswerClicked">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Image x:Name="answerD" Source="/resource/answerD_norm.png" Height="auto" VerticalAlignment="Top" Width="auto"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Grid Grid.Row="2" Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="9*"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="4*"/>
+                        <RowDefinition Height="2*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Column="1" Grid.Row="1"  HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <TextBlock x:Name="answerDTextblock" TextWrapping="Wrap" Text="TextBlock" FontSize="20" Foreground="white" Width="auto" Height="auto"> Odpověď D</TextBlock>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Grid>
+        <GridSplitter 
+            x:Name="lineSplitter" 
+            HorizontalAlignment="Center" 
+            Height="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Grid}},Path=ActualWidth}" 
+            VerticalAlignment="Top" Width="6" Grid.Column="1" Background="Black"/>
+
+        <local:RewardGrid x:Name="levelGrid" Grid.Column="2" NumberOfRewards="16" HorizontalAlignment="Center">
+
+        </local:RewardGrid>
+    </Grid>
+</Page>
